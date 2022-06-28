@@ -3,9 +3,6 @@ import random
 number = random.randint(-10000, 10000)
 num = number
 while True:
-    if num < 0:
-        num *= -1
-
     if num < 10:
         break
     num %= 10
