@@ -5,6 +5,10 @@ num = number
 while True:
     if num < 10 and num > -10:
         break
+    if num < 0:
+        num %= -10
+        continue
+
     num %= 10
 
 print(f"Last digit of {number} is {num} and", end=" ")
