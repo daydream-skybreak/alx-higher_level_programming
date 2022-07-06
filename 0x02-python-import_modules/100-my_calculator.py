@@ -1,14 +1,14 @@
 #!/usr/bin/python3
 if __name__ == "__main__":
-    import calculator_1
-    from sys import argv
-    if len(argv) != 4:
+    import sys
+    from calculator_1 import add, sub, mul, div
+    if len(sys.argv) != 4:
         print("Usage: ./100-my_calculator.py <a> <operator> <b>")
         exit(1)
-    a = int(argv[1])
-    c = argv[2]
-    b = int(argv[3])
     else:
+        a = int(sys.argv[1])
+        c = sys.argv[2]
+        b = int(sys.argv[3])
         if c == "+":
             result = add(a, b)
             print("{0:d} {1} {2:d} = {3}".format(a, c, b, result))
