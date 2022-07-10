@@ -7,10 +7,12 @@ def roman_to_int(roman_string):
     intN = 0
     i = 0
     while i < len(roman_string):
-        if i + 1 < len(roman_string) and roman_string[i:i + 2] in numbers:
-            intN += numbers[roman_string[i:i + 2]]
+        r_s = roman_string.upper()
+        if i + 1 < len(r_s) and r_s[i:i + 2] in numbers:
+            intN += numbers[r_s[i:i + 2]]
             i += 2
         else:
-            intN += numbers[roman_string[i]]
+            intN += numbers[r_s[i]]
             i += 1
     return intN
+print(roman_to_int("xi"))
