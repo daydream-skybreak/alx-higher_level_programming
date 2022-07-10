@@ -15,4 +15,3 @@ def roman_to_int(roman_string):
             intN += numbers[r_s[i]]
             i += 1
     return intN
-print(roman_to_int("xi"))
