@@ -1,10 +1,14 @@
 #!/usr/bin/python3
+from contextlib import nullcontext
+
+
 def safe_print_list(my_list=[], x=0):
-    i = 0
-    while i < x:
+    num_val = 0
+    for i in range(x):
         try:
             print("{}".format(my_list[i]), end="")
-            i += 1
+            num_val += 1
         except IndexError:
-            print("\n")
-            return i
+            break
+    print("")
+    return num_val
