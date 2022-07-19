@@ -8,6 +8,8 @@ class Square:
 
     def __init__(self, size=0):
         '''init method of class Square
+        Args:
+            size (int): integer argument for the class 'Square'
         '''
         self.size = size
 
@@ -21,7 +23,3 @@ class Square:
             raise TypeError("size must be an integer")
         if size < 0:
             raise ValueError("size must be >= 0")
-        self.__size = size
-
-    def area(self):
-        return self.__size**2
