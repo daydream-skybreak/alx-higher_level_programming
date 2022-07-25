@@ -56,7 +56,8 @@ class Rectangle:
         rect = ""
 
         if self.__width != 0 and self.__height != 0:
-            rect += "\n".join(print_symbol * self.__width
+            self.print_symbol = str(self.print_symbol)
+            rect += "\n".join(self.print_symbol * self.__width
                               for i in range(self.__height))
 
         return rect
