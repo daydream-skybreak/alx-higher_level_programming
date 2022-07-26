@@ -1,0 +1,51 @@
+The 0-add_integers module
+=========================
+
+testing for the function <add_integer>
+--------------------------------------
+>>> add_integer = __import__('0-add_integer').add_integer
+
+>>> add_integer(-2.3, -1.6)
+-3
+
+>>> add_integer(-5, -12)
+-17
+
+>>> add_integer(-98)
+0
+
+now testing for big numbers
+>>> add_integer(84829482, 93948388)
+178777870
+
+>>> add_integer(-84829482, 93948388)
+9118906
+
+>>> add_integer(None, 12)
+Traceback (most recent call last):
+    ...
+TypeError: a must be an integer
+
+>>> add_integer(True, 7)
+Traceback (most recent call last):
+    ...
+TypeError: a must be an integer
+
+>>> add_integer(23, None)
+Traceback (most recent call last):
+    ...
+TypeError: b must be an integer
+
+>>> add_integer(7, "new")
+Traceback (most recent call last):
+    ...
+TypeError: b must be an integer
+
+>>> add_integer(10)
+108
+
+>>> add_integer(8, 10)
+18
+
+>>> add_integer(24.9, 12.7)
+36
