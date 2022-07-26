@@ -1,0 +1,59 @@
+===============================
+testing function matrix_divided
+===============================
+
+this file will test for the function matrix_divided
+---------------------------------------------------
+
+>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+>>> matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+
+>>> matrix_divided(matrix, 3)
+[[0.33, 0.67, 1.0], [1.33, 1.67, 2.0], [2.33, 2.67, 3.0]]
+
+>>> matrix = [[-1, -2, -3], [-4, -5, -6], [-7, -8, -9]]
+
+>>> matrix_divided(matrix, 3)
+[[-0.33, -0.67, -1.0], [-1.33, -1.67, -2.0], [-2.33, -2.67, -3.0]]
+
+>>> matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+
+>>> matrix_divided(matrix, -3)
+[[-0.33, -0.67, -1.0], [-1.33, -1.67, -2.0], [-2.33, -2.67, -3.0]]
+
+>>> matrix = [[-1, -2, -3], [-4, -5, -6], [-7, -8, -9]]
+
+>>> matrix_divided(matrix, -3)
+[[0.33, 0.67, 1.0], [1.33, 1.67, 2.0], [2.33, 2.67, 3.0]]
+
+>>> matrix_divided(matrix, 0)
+Traceback (most recent call last):
+    ...
+ZeroDivisionError: division by zero
+
+>>> matrix_divided(matrix, "new")
+Traceback (most recent call last):
+    ...
+TypeError: div must be a number
+
+>>> matrix = [1, 2, 3]
+
+>>> matrix_divided(matrix, 10)
+Traceback (most recent call last):
+    ...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+>>> matrix = [[1, 2, 'try'], [4, 'even', 6], ['harder', 8, 9]]
+
+>>> matrix_divided(matrix, 10)
+Traceback (most recent call last):
+    ...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+>>> matrix = [[1, 2, 3, 4], [4, 5, 6], [7, 8, 5, 12, 9]]
+
+>>> matrix_divided(matrix, 10)
+Traceback (most recent call last):
+    ...
+TypeError: Each row of the matrix must have the same size
