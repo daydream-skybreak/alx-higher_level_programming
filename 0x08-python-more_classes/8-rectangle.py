@@ -81,6 +81,6 @@ class Rectangle:
         area_1 = rect_1.width * rect_1.height
         area_2 = rect_2.width * rect_2.height
         if area_1 >= area_2:
-            return area_1
+            return rect_1
         else:
-            return area_2
+            return rect_2
