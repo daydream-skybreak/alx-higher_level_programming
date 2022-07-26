@@ -97,7 +97,7 @@ class Rectangle:
             size: size of the length and width
         """
         new_class = cls()
-        newclass.width = size
-        newclass.height = size
+        new_class.width = size
+        new_class.height = size
 
         return new_class
