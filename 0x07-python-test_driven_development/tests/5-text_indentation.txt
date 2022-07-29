@@ -18,6 +18,11 @@ Is?
 Possible:
 <BLANKLINE>
 
+>>> text_indentation("Holberton.School")
+Holberton.
+<BLANKLINE>
+School
+
 ====testing for missing argument====
 >>> text_indentation()
 Traceback (most recent call last):

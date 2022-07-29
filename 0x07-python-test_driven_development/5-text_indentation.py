@@ -4,7 +4,7 @@
 
 def text_indentation(text):
     """Args:
-        text: string which is going to be broken down with the end flags <. ? :>
+        text: string which is going to be broken down with the end flags <.?:>
     """
     if not isinstance(text, str):
         raise TypeError("text must be a string")
