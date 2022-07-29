@@ -1,0 +1,40 @@
+===============================
+tests for Function print_square
+===============================
+
+this is a bunch of tests for the function print_square
+------------------------------------------------------
+------------------------------------------------------
+>>> print_square = __import__('4-print_square').print_square
+
+====testing for integer====
+>>> print_square(4)
+####
+####
+####
+####
+
+====testing for float====
+>>> print_square(2.5)
+Traceback (most recent call last):
+    ...
+TypeError: size must be an integer
+
+====testing for negative numbers====
+>>> print_square(-4)
+Traceback (most recent call last):
+    ...
+ValueError: size must be >= 0
+
+====testing for non integer types====
+>>> print_square("name")
+Traceback (most recent call last):
+    ...
+TypeError: size must be an integer
+
+>>> print_square(True)
+Traceback (most recent call last):
+    ...
+TypeError: size must be an integer
+
+================END================
