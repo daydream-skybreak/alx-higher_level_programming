@@ -1,0 +1,36 @@
+=================================
+testing function text_indentation
+=================================
+This is a function to test the function for possible wrong output
+-----------------------------------------------------------------
+-----------------------------------------------------------------
+
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+====testing for normal string====
+>>> text = "This. Is? Possible:"
+
+>>> text_indentation(text)
+This.
+<BLANKLINE>
+Is?
+<BLANKLINE>
+Possible:
+<BLANKLINE>
+
+====testing for missing argument====
+>>> text_indentation()
+Traceback (most recent call last):
+    ...
+TypeError: text_indentation() missing 1 required positional argument: 'text'
+
+====testing for other types====
+>>> text_indentation(12)
+Traceback (most recent call last):
+    ...
+TypeError: text must be a string
+
+>>> text_indentation(True)
+Traceback (most recent call last):
+    ...
+TypeError: text must be a string
