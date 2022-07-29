@@ -27,6 +27,21 @@ this file will test for the function matrix_divided
 >>> matrix_divided(matrix, -3)
 [[0.33, 0.67, 1.0], [1.33, 1.67, 2.0], [2.33, 2.67, 3.0]]
 
+-------checking with 2 missing postional argument-------
+>>> matrix_divided()
+Traceback (most recent call last):
+    ...
+TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
+
+-------checking with 1 missing postional argument-------
+>>> matrix_divided(matrix)
+Traceback (most recent call last):
+    ...
+TypeError: matrix_divided() missing 1 required positional argument: 'div'
+>>> matrix_divided(12)
+Traceback (most recent call last):
+    ...
+TypeError: matrix_divided() missing 1 required positional argument: 'div'
 >>> matrix_divided(matrix, 0)
 Traceback (most recent call last):
     ...
