@@ -5,6 +5,11 @@
 
 
 def print_square(size):
+    """
+    a function to print square using '#'
+    Args:
+        size: size of the square
+    """
     if type(size) != int:
         raise TypeError("size must be an integer")
     if size < 0:

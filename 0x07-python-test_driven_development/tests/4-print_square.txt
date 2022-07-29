@@ -8,6 +8,8 @@ this is a bunch of tests for the function print_square
 >>> print_square = __import__('4-print_square').print_square
 
 ====testing for integer====
+>>> print_square(0)
+<BLANKLINE> 
 >>> print_square(4)
 ####
 ####
@@ -36,5 +38,11 @@ TypeError: size must be an integer
 Traceback (most recent call last):
     ...
 TypeError: size must be an integer
+
+====testing for no arguments====
+>>> print_square()
+Traceback (most recent call last):
+    ...
+TypeError: print_square() missing 1 required positional argument: 'size'
 
 ================END================
