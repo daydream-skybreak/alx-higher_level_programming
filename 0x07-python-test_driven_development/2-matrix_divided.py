@@ -3,6 +3,11 @@
 
 
 def matrix_divided(matrix, div):
+    """a function to compute division on each member of a matrix
+    Args:
+        matrix: a two dimensional matrix
+        div: divisor
+    """
     size = None
     for i in range(len(matrix)):
         if type(matrix[i]) != list:

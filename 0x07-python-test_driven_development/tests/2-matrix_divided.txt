@@ -38,10 +38,16 @@ TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' an
 Traceback (most recent call last):
     ...
 TypeError: matrix_divided() missing 1 required positional argument: 'div'
+
 >>> matrix_divided(12)
 Traceback (most recent call last):
     ...
 TypeError: matrix_divided() missing 1 required positional argument: 'div'
+
+------checking for div being infinite-------------------
+>>> matrix_divided(matrix, float('inf'))
+[[0, 0, 0], [0, 0, 0], [0, 0, 0]]
+
 >>> matrix_divided(matrix, 0)
 Traceback (most recent call last):
     ...
