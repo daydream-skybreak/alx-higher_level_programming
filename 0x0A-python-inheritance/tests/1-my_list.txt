@@ -1,0 +1,112 @@
+===========================
+tests for function lookup
+===========================
+
+-----------------------------------------------
+Importing the class
+    >>> MyList = __import__('1-my_list').MyList
+
+docstring check
+  for module
+    >>> m = __import__('1-my_list').__doc__
+    >>> len(m) > 1
+    True
+
+  for class
+    >>> c = __import__('1-my_list').MyList.__doc__
+    >>> len(c) > 1
+    True
+
+  for function
+    >>> f = __import__('1-my_list').MyList.print_sorted.__doc__
+    >>> len(f) > 1
+    True
+
+inheritance check
+    >>> issubclass(MyList, list)
+    True
+
+non-ordered list check
+    >>> lis = MyList()
+    >>> lis.append(2)
+    >>> lis.append(4)
+    >>> lis.append(1)
+    >>> lis.append(7)
+    >>> lis.append(5)
+    >>> print(lis)
+    [2, 4, 1, 7, 5]
+    >>> lis.print_sorted()
+    [1, 2, 4, 5, 7]
+    >>> print(lis)
+    [2, 4, 1, 7, 5]
+
+empty list check
+    >>> lis = MyList()
+    >>> print(lis)
+    []
+    >>> lis.print_sorted()
+    []
+
+sorted list check
+  ascending sort
+    >>> lis = MyList()
+    >>> lis.append(1)
+    >>> lis.append(2)
+    >>> lis.append(3)
+    >>> lis.append(4)
+    >>> lis.append(5)
+    >>> print(lis)
+    [1, 2, 3, 4, 5]
+    >>> lis.print_sorted()
+    [1, 2, 3, 4, 5]
+    >>> print(lis)
+    [1, 2, 3, 4, 5]
+  
+  descending sort
+    >>> lis = MyList()
+    >>> lis.append(5)
+    >>> lis.append(4)
+    >>> lis.append(3)
+    >>> lis.append(2)
+    >>> lis.append(1)
+    >>> print(lis)
+    [5, 4, 3, 2, 1]
+    >>> lis.print_sorted()
+    [1, 2, 3, 4, 5]
+    >>> print(lis)
+    [5, 4, 3, 2, 1]
+
+negative number test
+  all negative
+    >>> lis = MyList()
+    >>> lis.append(-1)
+    >>> lis.append(-2)
+    >>> lis.append(-3)
+    >>> lis.append(-4)
+    >>> lis.append(-5)
+    >>> print(lis)
+    [-1, -2, -3, -4, -5]
+    >>> lis.print_sorted()
+    [-5, -4, -3, -2, -1]
+    >>> print(lis)
+    [-1, -2, -3, -4, -5]
+  
+  some negative
+    >>> lis = MyList()
+    >>> lis.append(1)
+    >>> lis.append(2)
+    >>> lis.append(-3)
+    >>> lis.append(4)
+    >>> lis.append(-5)
+    >>> print(lis)
+    [1, 2, -3, 4, -5]
+    >>> lis.print_sorted()
+    [-5, -3, 1, 2, 4]
+    >>> print(lis)
+    [1, 2, -3, 4, -5]
+
+too many arguments check
+    >>> lis.print_sorted(1)
+    Traceback (most recent call last):
+        ...
+    TypeError: print_sorted() takes 1 positional argument but 2 were given
