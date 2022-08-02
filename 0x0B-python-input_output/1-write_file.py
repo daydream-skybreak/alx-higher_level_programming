@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" 
+"""
 module for writing on files
 """
 
