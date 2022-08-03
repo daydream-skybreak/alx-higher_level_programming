@@ -9,7 +9,7 @@ class BaseGeometry:
     func:
       area: raises an error
     """
-    
+
     def area(self):
         """ raises an error of area not being implemented """
         raise Exception("area() is not implemented")
