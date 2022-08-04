@@ -47,5 +47,19 @@ class TestBase(unittest.TestCase):
         """ testing when the argument is list """
         self.assertEqual(Base([1,2]).id, [1,2])
 
+    def test_arg_dict(self):
+        """ testing when the argument is dictionary """
+        self.assertEqual(Base({'a': 1, 'b' : 2}).id, {'a' : 1, 'b' : 2})
+
+    def test_nb_instances(self):
+        """ testing to access the private class attribute """
+        with self.assertRaises(AttributeError):
+            print(Base(12).__nb_instances)
+
+    def test_arg_inf(self):
+        """ testing when the argument is inf """
+        self.assertEqual(Base(float('inf')).id, float('inf'))
+
+
 if __name__ == '__main__':
     unittest.main()
