@@ -4,6 +4,7 @@ module for class representation of a rectangle
 """
 from models.base import Base
 
+
 class Rectangle(Base):
     """class that is a representation of a rectangle"""
     def __init__(self, width, height, x=0, y=0, id=None):
@@ -35,7 +36,6 @@ class Rectangle(Base):
             raise ValueError("width must be > 0")
         self.__width = width
 
-
     @property
     def height(self):
         """ set and get the height of the rectangle"""
@@ -48,7 +48,7 @@ class Rectangle(Base):
         if height <= 0:
             raise ValueError("height must be > 0")
         self.__height = height
-        
+
     @property
     def x(self):
         """get and set x coordinate of the rectangle"""
@@ -61,7 +61,7 @@ class Rectangle(Base):
         if x < 0:
             raise ValueError("x must be >= 0")
         self.__x = x
-    
+
     @property
     def y(self):
         """get and set y coordinate of the rectangle"""
@@ -80,5 +80,11 @@ class Rectangle(Base):
         return self.height * self.width
 
     def display(self):
+        """displays the rectangle using `#` representation"""
         for i in range(self.height):
             print("#" * self.width)
+
+    def __str__(self):
+        """Returns a string representeaioln of the Rectangle"""
+        return "[Rectangle] ({}) {}/{} {}/{}".format(self.id, self.x, self.y,
+                                                     self.width, self.height)
