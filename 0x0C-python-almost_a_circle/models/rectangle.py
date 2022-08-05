@@ -2,8 +2,8 @@
 """
 module for class representation of a rectangle
 """
-from models.base import Base
-
+# from models.base import Base
+from base import Base
 
 class Rectangle(Base):
     """class that is a representation of a rectangle"""
@@ -81,7 +81,14 @@ class Rectangle(Base):
 
     def display(self):
         """displays the rectangle using `#` representation"""
+        if self.width == 0 or self.height == 0:
+            print("")
+            return
+
+        [print("") for i in range(self.y)]
+
         for i in range(self.height):
+            print(" " * self.x, end="")
             print("#" * self.width)
 
     def __str__(self):
