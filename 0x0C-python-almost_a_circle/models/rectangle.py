@@ -2,8 +2,8 @@
 """
 module for class representation of a rectangle
 """
-# from models.base import Base
-from base import Base
+from models.base import Base
+# from base import Base
 
 class Rectangle(Base):
     """class that is a representation of a rectangle"""
