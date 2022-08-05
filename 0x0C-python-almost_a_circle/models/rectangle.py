@@ -2,8 +2,11 @@
 """
 module for class representation of a rectangle
 """
-from models.base import Base
-# from base import Base
+try:
+    from models.base import Base
+except Exception:
+    from base import Base
+
 
 class Rectangle(Base):
     """class that is a representation of a rectangle"""
@@ -25,7 +28,7 @@ class Rectangle(Base):
 
     @property
     def width(self):
-        """ set and get the width of the rectangle"""
+        """ get and set the width of the rectangle"""
         return self.__width
 
     @width.setter
@@ -38,7 +41,7 @@ class Rectangle(Base):
 
     @property
     def height(self):
-        """ set and get the height of the rectangle"""
+        """ get and set the height of the rectangle"""
         return self.__height
 
     @height.setter
@@ -91,7 +94,7 @@ class Rectangle(Base):
             print(" " * self.x, end="")
             print("#" * self.width)
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """updates the rectangle based on the arguments passed to it"""
         if args and len(args) != 0:
             for arg in args:
@@ -100,7 +103,7 @@ class Rectangle(Base):
                     if arg is None:
                         self.__init__(self.width, self.height, self.x, self.y)
                     else:
-                        self.id = 1
+                        self.id = arg
                 elif i == 1:
                     self.width = arg
                 elif i == 2:
@@ -111,7 +114,23 @@ class Rectangle(Base):
                     self.y = arg
                 i += 1
 
+        if kwargs and len(kwargs) != 0:
+            for k, v in kwargs.items():
+                if k == "id":
+                    if v is None:
+                        self.__init__(self.width, self.height, self.x, self.y)
+                    else:
+                        self.id = v
+                elif k == "width":
+                    self.width = v
+                elif k == "height":
+                    self.height = v
+                elif k == "x":
+                    self.x = v
+                elif k == "y":
+                    self.y = v
+
     def __str__(self):
         """Returns a string representeaioln of the Rectangle"""
         return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.x, self.y,
-                                                     self.width, self.height)
+                                                       self.width, self.height)
