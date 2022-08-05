@@ -91,7 +91,27 @@ class Rectangle(Base):
             print(" " * self.x, end="")
             print("#" * self.width)
 
+    def update(self, *args):
+        """updates the rectangle based on the arguments passed to it"""
+        if args and len(args) != 0:
+            for arg in args:
+                i = 0
+                if i == 0:
+                    if arg is None:
+                        self.__init__(self.width, self.height, self.x, self.y)
+                    else:
+                        self.id = 1
+                elif i == 1:
+                    self.width = arg
+                elif i == 2:
+                    self.height = arg
+                elif i == 3:
+                    self.x = arg
+                elif i == 4:
+                    self.y = arg
+                i += 1
+
     def __str__(self):
         """Returns a string representeaioln of the Rectangle"""
-        return "[Rectangle] ({}) {}/{} {}/{}".format(self.id, self.x, self.y,
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.x, self.y,
                                                      self.width, self.height)
