@@ -41,3 +41,13 @@ class Base:
             else:
                 list_dict = [ob.to_dictionary() for ob in list_objs]
                 file.write(Base.to_json_string(list_dict))
+
+    @staticmethod
+    def from_json_string(json_string):
+        """ returns the list of deserialized the JSON string
+        Args:
+            json_string: as the name suggests
+        """
+        if json_string is None:
+            return []
+        return json.loads(json_string)
