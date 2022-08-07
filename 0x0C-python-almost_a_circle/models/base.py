@@ -11,7 +11,10 @@ class Base:
     """base class for all the other classes in this project"""
     __nb_object = 0
     def __init__(self, id=None):
-        """ instantiation function """
+        """ instantiation function
+        Args:
+            id: id of instances 
+        """
         if id is None:
             Base.__nb_object += 1
             self.id = Base.__nb_object
@@ -20,7 +23,21 @@ class Base:
 
     @staticmethod
     def to_json_string(list_dictionaries):
-        """returns the json representation of a list of dictionaries"""
+        """returns the JSON Serialization of a list of dictionaries"""
         if list_dictionaries is None:
             return "[]"
         return json.dumps(list_dictionaries)
+
+    @classmethod
+    def save_to_file(cls, list_objs):
+        """that writes the JSON string representation of list_objs to a file
+        Args:
+            list_objs: list of objects of a certain class
+        """
+        filename = cls.__name__ + ".json"
+        with open(filename, "w") as file:
+            if list_objs is None:
+                file.write("[]")
+            else:
+                list_dict = [ob.to_dictionary() for ob in list_objs]
+                file.write(Base.to_json_string(list_dict))
