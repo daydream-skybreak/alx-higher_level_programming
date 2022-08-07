@@ -144,4 +144,3 @@ class Rectangle(Base):
         """Returns a string representeaioln of the Rectangle"""
         return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.x, self.y,
                                                        self.width, self.height)
-
