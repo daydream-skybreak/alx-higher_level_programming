@@ -10,10 +10,11 @@ import json
 class Base:
     """base class for all the other classes in this project"""
     __nb_object = 0
+
     def __init__(self, id=None):
         """ instantiation function
         Args:
-            id: id of instances 
+            id: id of instances
         """
         if id is None:
             Base.__nb_object += 1
@@ -60,3 +61,16 @@ class Base:
             dumy = cls(1)
         dumy.update(**dictionary)
         return dumy
+
+    @classmethod
+    def load_from_file(cls):
+        """returns a list of instances from a .json file
+        returns an empty list if the file doesn't exist
+        """
+        file_name = cls.__name__ + ".json"
+        try:
+            with open(file_name, "r") as file:
+                list_dict = Base.from_json_string(file.read())
+                return [cls.create(**d) for d in list_dict]
+        except IOError:
+            return []
