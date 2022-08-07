@@ -4,6 +4,9 @@ Base class instantiation module
 """
 
 
+import json
+
+
 class Base:
     """base class for all the other classes in this project"""
     __nb_object = 0
@@ -14,3 +17,10 @@ class Base:
             self.id = Base.__nb_object
         else:
             self.id = id
+
+    @staticmethod
+    def to_json_string(list_dictionaries):
+        """returns the json representation of a list of dictionaries"""
+        if list_dictionaries is None:
+            return "[]"
+        return json.dumps(list_dictionaries)
