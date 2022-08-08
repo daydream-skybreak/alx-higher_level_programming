@@ -3,8 +3,10 @@
 Base class instantiation module
 """
 
-
+import random
 import json
+import csv
+import turtle
 
 
 class Base:
@@ -116,3 +118,42 @@ class Base:
                 return [cls.create(**d) for d in list_dicts]
         except IOError:
             return []
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """draws the list of rectangles and squares on turtle graphics
+
+        Args:
+            list_rectangles=> list of rectangle instances
+            list_squares=> list of square instances
+        """
+        scr = turtle.Screen()
+        tur = turtle.Turtle()
+        tur.pen()
+        tur.hideturtle()
+        tur.speed(6)
+        for rect in list_rectangles:
+            a, b, c = [random.randint(1, 255) for i in range(3)]
+            tur.color(a / 255, b / 255, c / 255)
+            tur.penup()
+            tur.setpos(rect.x, rect.y)
+            for i in range(2):
+                tur.pendown()
+                tur.fd(rect.width)
+                tur.rt(90)
+                tur.fd(rect.height)
+                tur.rt(90)
+            tur.fillcolor(colors[random.randint(0, len(colors) - 1)])
+
+        for sqr in list_squares:
+            tur.penup()
+            tur.setpos(sqr.x, sqr.y)
+            tur.color(colors[random.randint(0, len(colors) - 1)])
+            a, b, c = [random.randint(1, 255) for i in range(3)]
+            tur.color(a / 255, b / 255, c / 255)
+            for i in range(4):
+                tur.pendown()
+                tur.fd(sqr.size)
+                tur.rt(90)
+        while True:
+            scr.update()
