@@ -97,8 +97,8 @@ class Rectangle(Base):
     def update(self, *args, **kwargs):
         """updates the rectangle based on the arguments passed to it"""
         if args and len(args) != 0:
+            i = 0
             for arg in args:
-                i = 0
                 if i == 0:
                     if arg is None:
                         self.__init__(self.width, self.height, self.x, self.y)
@@ -114,7 +114,7 @@ class Rectangle(Base):
                     self.y = arg
                 i += 1
 
-        if kwargs and len(kwargs) != 0:
+        elif kwargs and len(kwargs) != 0:
             for k, v in kwargs.items():
                 if k == "id":
                     if v is None:
