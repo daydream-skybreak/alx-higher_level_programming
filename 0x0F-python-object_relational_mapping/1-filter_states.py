@@ -20,7 +20,8 @@ if __name__ == '__main__':
     data_base = sys.argv[3]
     datab = MySQLdb.connect("localhost", usr, paswrd, data_base, port=3306)
     cur = datab.cursor()
-    cur.execute(" SELECT * FROM states WHERE name LIKE 'N%' ORDER BY states.id")
+    cur.execute(" SELECT * FROM states\
+    WHERE name LIKE 'N%' ORDER BY states.id")
     r = cur.fetchall()
     for row in r:
         print(row)
