@@ -1,12 +1,14 @@
 #!/usr/bin/python3
 """
-this module will list all 'states' starting with 'N'
+this module will list all 'states' starting where the name matches the arg
 from the database 'hbtn_0e_0_usa'
+ch
 
 This script will accept three arguments
     mysql_username: the username of the mysql server
     mysql_password: the password for the user
     database name: the database in which 'states' table is found
+    name_constraint: the name where `states.name` should be
 
     server - localhost
     port - 3306
