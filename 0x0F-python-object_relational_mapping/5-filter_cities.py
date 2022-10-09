@@ -27,7 +27,6 @@ if __name__ == '__main__':
         WHERE states.name = '{0}'\
         ORDER BY cities.id".format(name))
     r = cur.fetchall()
-    print(r)
     for id in range(len(r)):
         for i in r[id]:
             print(i, end=", ") if id != len(r) - 1 else print(i)
