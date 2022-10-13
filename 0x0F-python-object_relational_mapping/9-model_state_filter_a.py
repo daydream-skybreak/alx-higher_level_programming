@@ -15,5 +15,6 @@ if __name__ == '__main__':
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    s = session.query(State).order_by(State.id).first()
-    print("Nothing" if s is None else "{}: {}".format(s.id, s.name))
+    for s in session.query(State).order_by(State.id)\
+                                 .filter(State.name.like('%a%')).all():
+        print("Nothing" if s is None else "{}: {}".format(s.id, s.name))
