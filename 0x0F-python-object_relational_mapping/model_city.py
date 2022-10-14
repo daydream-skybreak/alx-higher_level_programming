@@ -11,7 +11,6 @@ from model_state import Base
 from sqlalchemy import Column, String, Integer, ForeignKey
 
 
-
 class City(Base):
     """ class that defines a city table in our database """
     __tablename__ = 'cities'
