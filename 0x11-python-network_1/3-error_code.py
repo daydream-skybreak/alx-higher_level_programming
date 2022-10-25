@@ -2,7 +2,7 @@
 """
 sends a request to the URL and displays the body of the response
 manages urllib.error.HTTPError
-prints a message 'Error message: {HTTP status code}' 
+prints a message 'Error message: {HTTP status code}'
 """
 if __name__ == '__main__':
     import urllib.request
